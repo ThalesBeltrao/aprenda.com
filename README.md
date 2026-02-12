@@ -34,3 +34,10 @@ graph LR
     
     API -->|JSON| Static
     Static -->|📈 Chart.js| Charts[📊 Gráficos Dinâmicos]
+
+
+<br><br>
+
+![Project](https://img.shields.io/badge/IMAGE-PROJECT-blue?style=for-the-badge&logo=github)
+
+![Print do Projeto](/aprenda.com/project/img/image.png)
