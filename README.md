@@ -36,4 +36,4 @@ graph LR
     Static -->|📈 Chart.js| Charts[📊 Gráficos Dinâmicos]
 
 
-![Print do Projeto](imag/imagem.png)
+![Print do Projeto](/img/imagem.png)
