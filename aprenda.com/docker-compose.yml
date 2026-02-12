@@ -1,0 +1,36 @@
+services:
+  # --- BANCO DE DADOS ---
+  mongodb:
+    image: mongo:7
+    container_name: mongodb_dash
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  # --- BACKEND (FastAPI) ---
+  api:
+    build: ./project/backend
+    container_name: fastapi_app
+    ports:
+      - "8000:8000"
+    environment:
+      # No Docker, o host do mongo não é 'localhost', é o nome do serviço
+      - MONGO_URI=mongodb://mongodb:27017/
+    depends_on:
+      - mongodb
+
+  # --- FRONTEND + PROXY (Nginx) ---
+  nginx:
+    image: nginx:alpine
+    container_name: nginx_proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./project/frontend:/usr/share/nginx/html:ro
+      - ./project/frontend/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - api
+
+volumes:
+  mongo_data:
