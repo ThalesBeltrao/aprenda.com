@@ -34,3 +34,6 @@ graph LR
     
     API -->|JSON| Static
     Static -->|📈 Chart.js| Charts[📊 Gráficos Dinâmicos]
+
+
+![Print do Projeto](imag/imagem.png)
