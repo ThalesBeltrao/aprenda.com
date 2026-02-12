@@ -36,4 +36,8 @@ graph LR
     Static -->|📈 Chart.js| Charts[📊 Gráficos Dinâmicos]
 
 
-![Print do Projeto](/img/imagem.png)
+<br><br>
+
+![Project](https://img.shields.io/badge/IMAGE-PROJECT-blue?style=for-the-badge&logo=github)
+
+![Print do Projeto](/aprenda.com/project/img/image.png)
