@@ -41,5 +41,5 @@ graph LR
 
 ![Project](https://img.shields.io/badge/IMAGE-PROJECT-blue?style=for-the-badge&logo=github)
 
-<<<<<<< HEAD
+
 ![Print do Projeto](/aprenda.com/project/img/image.png)
