@@ -43,6 +43,3 @@ graph LR
 
 <<<<<<< HEAD
 ![Print do Projeto](/aprenda.com/project/img/image.png)
-=======
-![Print do Projeto](/aprenda.com/project/img/image.png)
->>>>>>> d5faeca050dbc6ba9b8c067fa7f17ed6ea4ecf91
