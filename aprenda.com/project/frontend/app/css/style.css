@@ -110,6 +110,19 @@ body{
 }
 
 
+.sidebar-list li a {
+    text-decoration: none;
+    color:#9e9ea4
+}
+
+
+
+
+
+
+
+
+
 /*------------MAIN-----------*/
 .main-container{
     grid-area: main;

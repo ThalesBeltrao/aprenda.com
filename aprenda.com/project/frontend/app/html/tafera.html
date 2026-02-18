@@ -1,11 +1,102 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Estude</title>
+
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/tarefa.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons">menu</span>
+        </div>
+
+        <div class="header-left">
+          <span class="material-icons">search</span>
+        </div>
+
+        <div class="header-right">
+          <span class="material-icons">notifications</span>
+          <span class="material-icons">email</span>
+          <span class="material-icons">account_circle</span>
+        </div>
+      </header>
+
+      <!-- SIDEBAR -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons">school</span>
+            Aprenda.com
+            <span class="material-icons" onclick="closeSidebar()">close</span>
+          </div>
+        </div>
+
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+           <a href="../html/index.html"> <span class="material-icons">dashboard</span>Dashboard</a> 
+          </li>
+          <li class="sidebar-list-item">
+            <a href="./tafera.html"> <span class="material-icons">assignment</span> Tarefa</a>
+           </li>
+          <li class="sidebar-list-item">
+            <span class="material-icons">date_range</span> Calendário
+          </li>
+          <li class="sidebar-list-item">
+            <span class="material-icons">schedule</span> Cronômetro
+          </li>
+          <li class="sidebar-list-item">
+            <span class="material-icons">insights</span> Análise
+          </li>
+          <li class="sidebar-list-item">
+            <span class="material-icons">person</span> Usuário
+          </li>
+          <li class="sidebar-list-item">
+            <span class="material-icons">settings</span> Configurações
+          </li>
+        </ul>
+      </aside>
+
+      <section name="container-calendar" id="">
+      <!--Calendario-->
+        <div class="calendar">
+            <div class="header">
+                <div id="prev" class="btn"><span class="material-symbols-outlined">arrow_back</span><br></div>
+                <div id="month-year"></div>
+                <div id="next" class="btn"><span class="material-symbols-outlined">arrow_right_alt</span></div>
+            </div>
+            <div class="weekdays">
+            <div>Seg.</div>
+            <div>Ter.</div>
+            <div>Qua.</div>
+            <div>Qui.</div>
+            <div>Sex.</div>
+            <div>Sáb.</div>
+            <div>Dom.</div>
+            </div>
+            <div id="days" class="days"></div>
+
+        </div>
+      </section>
+
+        
+
+    <!-- JS -->
+    <script src="../js/index.js"></script>
+    <script src="../js/tarefa.js"></script>
+  </body>
 </html>
