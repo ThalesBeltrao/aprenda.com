@@ -56,12 +56,14 @@
 .days div:hover{
     background-color:aliceblue;
     color:orangered;
+    text-align: center;
 
 }
 
 .days .today{
     background-color:orangered ;
     color: aliceblue;
+    text-align: center;
 }
 
 .days .fade {
