@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Estude</title>
+
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons">menu</span>
+        </div>
+
+        <div class="header-left">
+          <span class="material-icons">search</span>
+        </div>
+
+        <div class="header-right">
+          <span class="material-icons">notifications</span>
+          <span class="material-icons">email</span>
+          <span class="material-icons">account_circle</span>
+        </div>
+      </header>
+
+      <!-- SIDEBAR -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons">school</span>
+            Aprenda.com
+            <span class="material-icons" onclick="closeSidebar()">close</span>
+          </div>
+        </div>
+
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <span class="material-icons">dashboard</span> Dashboard
+          </li>
+          <li class="sidebar-list-item">
+            <a href="./tafera.html"> <span class="material-icons">assignment</span> Tarefa</a>
+           </li>
+          <li class="sidebar-list-item">
+            <span class="material-icons">date_range</span> Calendário
+          </li>
+          <li class="sidebar-list-item">
+            <span class="material-icons">schedule</span> Cronômetro
+          </li>
+          <li class="sidebar-list-item">
+            <span class="material-icons">insights</span> Análise
+          </li>
+          <li class="sidebar-list-item">
+            <span class="material-icons">person</span> Usuário
+          </li>
+          <li class="sidebar-list-item">
+            <span class="material-icons">settings</span> Configurações
+          </li>
+        </ul>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main-container">
+        <div class="main-title">
+          <h2>DASHBOARD</h2>
+        </div>
+
+        <div class="main-cards">
+          <div class="card">
+            <h3>MATÉRIAS</h3>
+            <span class="material-icons">menu_book</span>
+            <h1>12</h1>
+          </div>
+
+          <div class="card">
+            <h3>CATEGORIAS</h3>
+            <span class="material-icons">category</span>
+            <h1>8</h1>
+          </div>
+
+          <div class="card">
+            <h3>QUESTÕES</h3>
+            <span class="material-icons">quiz</span>
+            <h1>320</h1>
+          </div>
+
+          <div class="card">
+            <h3>ALERTAS</h3>
+            <span class="material-icons">notifications</span>
+            <h1>5</h1>
+          </div>
+        </div>
+
+        <div class="charts">
+          <div class="charts-cards">
+            <h2 class="chart-title">Top 5 Materias</h2>
+            <div id="bar-chart"></div>
+          </div>
+          <div class="charts-cards">
+            <h2 class="chart-title">Total de Horas Estudada </h2>
+            <div id="area-chart"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <!-- JS -->
+    <script src="../js/index.js"></script>
+  </body>
+</html>
