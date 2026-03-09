@@ -42,7 +42,9 @@ document.addEventListener("DOMContentLoaded", function(){
    }
    // Next month's dates
     const totalCells = daysContainer.children.length; // Quantos dias já colocamos (passado + atual)
-    const remaining = 31 - totalCells; // 42 é o padrão de 6 linhas x 7 colunas
+     
+
+    const remaining = 42 - totalCells; // 42 é o padrão de 6 linhas x 7 colunas
 
     for (let i = 1; i <= remaining; i++) {
     const dayDiv = document.createElement("div");

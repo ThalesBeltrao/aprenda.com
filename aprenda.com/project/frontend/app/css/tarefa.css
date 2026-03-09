@@ -1,12 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    min-height: 100vh;       /* Garante que o body tenha a altura da tela toda */
+}
 
+
+
+
+
+.container-total {
+    position: relative;
+    display: flex;
+    flex-direction: column;       /* Permite que a tabela desça se não couber ao lado do calendário *//* Alinha o topo do calendário com o topo da tabela */
+    gap: 20px;              /* Cria um espaçamento entre o calendário e a tabela */
+    width: 95%; 
+    min-width: 1500px;
+    margin-left: auto;        /* Troque 1500px por 100% */
+    margin-right: auto;
+    box-sizing: border-box;
+    margin:0;      /* O 'auto' centraliza o próprio container na tela */
+    
+    /* Remova o margin-left fixo que empurra tudo para a direita */
+  /* Debug */
+}
 .calendar{
     background-color:#111111;
     border-radius: 10px;
     box-shadow:0 0 30px #222222;
     overflow: hidden;
-    width: 300px;
-    margin-top: 10px;
-    margin-left: 10px;
+    width: 280px;
+    height: 380px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+
     color:aliceblue;
     padding: 20px;
 }
@@ -48,20 +78,20 @@
 .days div {
 
     cursor: pointer;
-    transform: background-color 0.3s;
+    transition: background-color 0.3s;
     height:15px;
 
 }
 
 .days div:hover{
     background-color:aliceblue;
-    color:orangered;
+    color:#8a2be2;
     text-align: center;
 
 }
 
 .days .today{
-    background-color:orangered ;
+    background-color:#8a2be2;
     color: aliceblue;
     text-align: center;
 }
@@ -70,3 +100,202 @@
     color: #ccc !important; 
     opacity: 0.5;
 }
+
+.table{
+    width: 100px;
+    height: 100px;
+    
+}
+
+
+
+
+
+/* TABELA */
+.container-table {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:100px ;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+
+    /* Sombra moderna */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Cabeçalho */
+.container-table th {
+    padding: 15px;
+    background-color: #8a2be2;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Células */
+.container-table th,
+.container-table td {
+    padding: 15px;
+    border: none;                 /* remove todas as bordas */
+    border-bottom: 1px solid #eee; /* linha horizontal leve */
+    border-right: 1px solid rgba(0,0,0,0.06); /* 👈 divisor vertical */
+    text-align: center;
+
+}
+
+/* Remove divisor da última coluna */
+.container-table th:last-child,
+.container-table td:last-child {
+    border-right: none;
+}
+
+
+/* Linhas alternadas */
+.container-table #tabela-estudos tr:nth-child(even) {
+    background-color: #d1d1d1;
+}
+
+/* Transição suave nas linhas */
+.container-table #tabela-estudos tr {
+    transition: all 0.25s ease;
+}
+
+/* Efeito hover moderno */
+.container-table #tabela-estudos tr:hover {
+    background-color: #1a1a1b;
+    box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.02);
+}
+
+/* Valor do preço */
+.container-table .valor {
+    color: darkgreen;
+    font-weight: 600;
+}
+
+
+/* Cronometro Estudo */
+
+.container-cronometro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;    /* Distância do topo */
+    right:0px;   /* Distância da direita */
+    width: 300px;
+    height: 380px;
+    padding: 20px;
+    border-radius:10px;
+    box-shadow:0 0 30px #222222;
+    background-color:#111111; /* Opcional: para visualização */
+    z-index: 10;   /* Garante que fique acima de outros elementos */
+}
+
+
+#stopwatch{
+    display: flex;
+    flex-direction: column;
+    background-color:111111;
+    border-radius: 8px;
+    align-items: center;
+}
+
+/* fonte do Cronometro */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+#timer {
+    width: 220px;           /* Defina uma largura fixa igual à altura */
+    height: 220px;          /* Para ser um círculo perfeito */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size:70px;
+    text-align: center;
+    
+    /* 1. Transforma em círculo */
+    border-radius: 50%; 
+    
+    /* 2. Borda roxa sólida */
+    border: #8a2be2 2px solid; 
+    
+    /* 3. Efeito de sombra iluminante (Glow) */
+    box-shadow: 0 0 15px #8a2be2, inset 0 0 15px #8a2be2;
+    
+    
+
+}
+
+
+
+#actions{
+    margin-top:5px;
+    display: flex;
+    gap: 20px;
+}
+
+#actions button{
+    display: flex;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    width:50px;
+    height: 50px;
+    border:1px solid #8a2be2;
+    border-radius: 50px;
+    box-shadow: 0 0 15px #8a2be2, inset 0 0 15px #8a2be2;
+    background-color:#201e1e;
+    cursor: pointer;
+
+}
+
+#actions button:hover{
+    color: #8a2be2;
+}
+
+
+
+.calendar, 
+.container-cronometro, 
+.dashboard-dados {
+    /* deslocamento-x | deslocamento-y | desfoque | espalhamento | cor */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    
+    /* Opcional: uma borda bem fina para ajudar na definição */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* Dashboard Dados de Estudo do Usuário */
+.dashboard-dados {
+    position: absolute;
+    
+    /* Distâncias laterais baseadas na largura dos vizinhos + um respiro (gap) */
+    left: 340px;  /* 320px do calendário + 20px de margem */
+    right: 360px; /* 340px do cronômetro + 20px de margem */
+    
+    /* Remova o width fixo de 800px! */
+    /* Com left e right definidos, o navegador calcula o width automaticamente */
+    
+    height: 380px;
+    padding:20px; /* Alinhado com a altura do cronômetro */
+    top: 0; 
+    
+    z-index: 30;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    
+    /* Centraliza o conteúdo interno do dashboard */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+

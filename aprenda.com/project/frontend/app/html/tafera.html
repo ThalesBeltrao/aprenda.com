@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Estude</title>
-
     <link rel="stylesheet" href="../css/style.css"/>
     <link rel="stylesheet" href="../css/tarefa.css">
     <link
@@ -71,32 +70,116 @@
         </ul>
       </aside>
 
-      <section name="container-calendar" id="">
-      <!--Calendario-->
-        <div class="calendar">
-            <div class="header">
-                <div id="prev" class="btn"><span class="material-symbols-outlined">arrow_back</span><br></div>
-                <div id="month-year"></div>
-                <div id="next" class="btn"><span class="material-symbols-outlined">arrow_right_alt</span></div>
-            </div>
-            <div class="weekdays">
-            <div>Seg.</div>
-            <div>Ter.</div>
-            <div>Qua.</div>
-            <div>Qui.</div>
-            <div>Sex.</div>
-            <div>Sáb.</div>
-            <div>Dom.</div>
-            </div>
-            <div id="days" class="days"></div>
+      <main class="container-total">
 
-        </div>
-      </section>
+        <section name="container-calendar" id="">
+        <!--Calendario-->
+          <div class="calendar">
+              <div class="header">
+                  <div id="prev" class="btn"><span class="material-symbols-outlined">arrow_back</span><br></div>
+                  <div id="month-year"></div>
+                  <div id="next" class="btn"><span class="material-symbols-outlined">arrow_right_alt</span></div>
+              </div>
+              <div class="weekdays">
+              <div>Dom.</div>
+              <div>Seg.</div>
+              <div>Ter.</div>
+              <div>Qua.</div>
+              <div>Qui.</div>
+              <div>Sex.</div>
+              <div>Sáb.</div>
+              </div>
+              <div id="days" class="days"></div>
+
+          </div>
+          
+        </section>
+        <table class="container-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Matéria</th>
+                    <th>Tópico</th>
+                    <th>Tempo</th>
+                    <th>Data</th>
+                </tr>
+                
+            </thead>
+            <tbody id="tabela-estudos">
+              <tr>
+                  <td>01</td>
+                  <td></td>
+                  <td></td>
+                  <td class="valor"></td>
+                  <td class="data"></td>
+                </tr>
+              <tr>
+                  <td>02</td>
+                  <td></td>
+                  <td></td>
+                  <td class="valor"></td>
+                  <td class="data"></td>
+              </tr>
+              <tr>
+                  <td>03</td>
+                  <td></td>
+                  <td></td>
+                  <td class="valor"></td>
+                  <td class="data"></td>
+              </tr>
+              <tr>
+                  <td>04</td>
+                  <td></td>
+                  <td></td>
+                  <td class="valor"></td>
+                  <td class="data"></td>
+              </tr>
+              <tr>
+                  <td>05</td>
+                  <td></td>
+                  <td></td>
+                  <td class="valor"></td>
+                  <td class="data"></td>
+              </tr>
+          
+            </tbody>
+          </table>
+          <section class="container-cronometro">
+             <div id="stopwatch">
+                <h2 id="timer">
+                    00:00:00
+                </h2>
+
+                <div id="actions">
+
+                  <button id="reset">
+                      <i class="material-icons">redo</i>
+                  </button>
+                  <button id="power" action="start">
+                    <i class="material-icons">play_arrow</i>
+                  </button>
+                  <button id="reset">
+                    <i class="material-icons">save</i>
+                  </button>
+                </div>
+              </div>
+
+
+
+
+          </section>
+          <section class="dashboard-dados">
+
+          </section>
+        
+      </main>
 
         
 
     <!-- JS -->
     <script src="../js/index.js"></script>
     <script src="../js/tarefa.js"></script>
+    <script src="../js/cronometro.js"></script>
+
   </body>
 </html>
