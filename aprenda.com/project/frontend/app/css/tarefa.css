@@ -8,20 +8,17 @@ body {
 }
 
 
-
-
-
 .container-total {
     position: relative;
     display: flex;
     flex-direction: column;       /* Permite que a tabela desça se não couber ao lado do calendário *//* Alinha o topo do calendário com o topo da tabela */
     gap: 20px;              /* Cria um espaçamento entre o calendário e a tabela */
-    width: 95%; 
-    min-width: 1500px;
+    width: 100%; 
+    min-width: 1600px;
     margin-left: auto;        /* Troque 1500px por 100% */
     margin-right: auto;
     box-sizing: border-box;
-    margin:0;      /* O 'auto' centraliza o próprio container na tela */
+    overflow-x: hidden;
     
     /* Remova o margin-left fixo que empurra tudo para a direita */
   /* Debug */
@@ -112,11 +109,19 @@ body {
 
 
 /* TABELA */
+.container-total-table {
+    width:100%;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    gap:20px;
+
+    
+
+}
+
 .container-table {
     width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top:100px ;
     border-collapse: collapse;
     table-layout: fixed;
     background-color: white;
@@ -176,6 +181,68 @@ body {
     color: darkgreen;
     font-weight: 600;
 }
+/*#############################*/
+/* formularo-estudo */
+
+.formulario-estudo{
+    width: 300px;
+    height: 380px;
+    padding: 10px;
+    border-radius:10px;
+    background-color: #111111;
+    box-shadow:0 0 30px #222222;
+}
+
+.form-estudo01{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:5px;
+}
+
+.form-estudo01 input {
+    width:80%;
+    height:30px;
+    border:1px solid  #8a2be2;
+    border-radius:10px;
+    text-align: center;
+
+}
+
+.form-estudo01 input:focus {
+    outline: none;             /* Remove a linha azul padrão */
+    border: 1px solid #8a2be2; /* Sua cor personalizada */
+    box-shadow: 0 0 5px #8a2be2; /* Adiciona um brilho (opcional) */
+}
+
+.form-estudo01 button {
+    background-color: #8a2be2;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin-top:20px;
+    border-radius: 5px;
+    font-weight: bold;
+    
+    /* Faz a "mãozinha" aparecer ao passar o mouse */
+    cursor: pointer; 
+    
+    /* Suaviza a transição de cor */
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.form-estudo01 button:hover {
+    background-color: #a04ef6; /* Fica um roxo mais claro */
+    box-shadow: 0 0 15px #8a2be2; /* Adiciona o brilho igual ao do cronômetro */
+    transform: scale(1.02); /* Dá um leve aumento de tamanho */
+}
+
+/* Efeito ao clicar (segurar o clique) */
+.form-estudo01 button:active {
+    transform: scale(0.98); /* O botão "afunda" levemente */
+}
+
 
 
 /* Cronometro Estudo */
@@ -199,7 +266,7 @@ body {
 #stopwatch{
     display: flex;
     flex-direction: column;
-    background-color:111111;
+    background-color:#111111;
     border-radius: 8px;
     align-items: center;
 }
@@ -230,8 +297,6 @@ body {
 
 }
 
-
-
 #actions{
     margin-top:5px;
     display: flex;
@@ -255,6 +320,7 @@ body {
 
 #actions button:hover{
     color: #8a2be2;
+
 }
 
 
@@ -295,7 +361,5 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-
 
 

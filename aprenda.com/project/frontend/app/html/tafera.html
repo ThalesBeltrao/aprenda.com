@@ -94,56 +94,76 @@
           </div>
           
         </section>
-        <table class="container-table">
-            <thead>
+        <!--Tabela Estudo-->
+        <section class="container-total-table">
+           <!--Formulario-->
+          <section class="formulario-estudo">
+            <form action="" class="form-estudo01">
+              <h3 style="color: white; margin-top: 0;">Novo Registro</h3>
+              <label>Materia</label>
+              <input type="text" placeholder="Matéria" id="input-materia">
+              <label>Tópico</label>
+              <input type="text" placeholder="Tópico" id="input-topico">
+              <label>Tempo</label>
+              <input type="text" placeholder="Tempo" id="input-tempo">
+              <label>Data</label>
+              <input type="text" placeholder="Data" id="Data">
+              <button type="button">Adicionar</button>
+            </form>
+          </section>
+          <table class="container-table">
+              <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>Matéria</th>
+                      <th>Tópico</th>
+                      <th>Tempo</th>
+                      <th>Data</th>
+                  </tr>
+                  
+              </thead>
+              <tbody id="tabela-estudos">
                 <tr>
-                    <th>ID</th>
-                    <th>Matéria</th>
-                    <th>Tópico</th>
-                    <th>Tempo</th>
-                    <th>Data</th>
+                    <td>01</td>
+                    <td></td>
+                    <td></td>
+                    <td class="valor"></td>
+                    <td class="data"></td>
+                  </tr>
+                <tr>
+                    <td>02</td>
+                    <td></td>
+                    <td></td>
+                    <td class="valor"></td>
+                    <td class="data"></td>
                 </tr>
-                
-            </thead>
-            <tbody id="tabela-estudos">
-              <tr>
-                  <td>01</td>
-                  <td></td>
-                  <td></td>
-                  <td class="valor"></td>
-                  <td class="data"></td>
+                <tr>
+                    <td>03</td>
+                    <td></td>
+                    <td></td>
+                    <td class="valor"></td>
+                    <td class="data"></td>
                 </tr>
-              <tr>
-                  <td>02</td>
-                  <td></td>
-                  <td></td>
-                  <td class="valor"></td>
-                  <td class="data"></td>
-              </tr>
-              <tr>
-                  <td>03</td>
-                  <td></td>
-                  <td></td>
-                  <td class="valor"></td>
-                  <td class="data"></td>
-              </tr>
-              <tr>
-                  <td>04</td>
-                  <td></td>
-                  <td></td>
-                  <td class="valor"></td>
-                  <td class="data"></td>
-              </tr>
-              <tr>
-                  <td>05</td>
-                  <td></td>
-                  <td></td>
-                  <td class="valor"></td>
-                  <td class="data"></td>
-              </tr>
-          
-            </tbody>
-          </table>
+                <tr>
+                    <td>04</td>
+                    <td></td>
+                    <td></td>
+                    <td class="valor"></td>
+                    <td class="data"></td>
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td></td>
+                    <td></td>
+                    <td class="valor"></td>
+                    <td class="data"></td>
+                </tr>
+            
+              </tbody>
+            </table>
+           
+          </section>
+          <!--cronometro-->
           <section class="container-cronometro">
              <div id="stopwatch">
                 <h2 id="timer">
@@ -158,14 +178,11 @@
                   <button id="power" action="start">
                     <i class="material-icons">play_arrow</i>
                   </button>
-                  <button id="reset">
+                  <button id="save-timer">
                     <i class="material-icons">save</i>
                   </button>
                 </div>
               </div>
-
-
-
 
           </section>
           <section class="dashboard-dados">
@@ -174,12 +191,12 @@
         
       </main>
 
-        
-
     <!-- JS -->
     <script src="../js/index.js"></script>
-    <script src="../js/tarefa.js"></script>
+    <script src="../js/calendario.js"></script>
     <script src="../js/cronometro.js"></script>
+    <script src="../js/tabela-form.js"></script>
+  
 
   </body>
 </html>

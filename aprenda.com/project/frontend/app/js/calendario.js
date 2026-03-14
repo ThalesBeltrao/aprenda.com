@@ -32,14 +32,29 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     
     // Current month's dates 
-    for (let i = 1; i <= lastDay; i++){
-        const dayDiv = document.createElement("div");
-        dayDiv.textContent = i;
-        if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()){
-            dayDiv.classList.add("today");
+   for (let i = 1; i <= lastDay; i++){
+    const dayDiv = document.createElement("div");
+    dayDiv.textContent = i;
+    dayDiv.style.cursor = "pointer"; // Indica que é clicável
+
+    if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()){
+        dayDiv.classList.add("today");
+    }
+    // EVENTO DE CLIQUE PARA PEGAR A DATA
+    dayDiv.addEventListener("click", function() {
+        // Formata a data como DD/MM/AAAA
+        const selectedDate = `${i.toString().padStart(2, '0')}/${(month + 1).toString().padStart(2, '0')}/${year}`;
+        
+        // Insere no input do formulário
+        const inputData = document.getElementById("Data");
+        if (inputData) {
+            inputData.value = selectedDate;
         }
-        daysContainer.appendChild(dayDiv);
-   }
+    });
+
+    daysContainer.appendChild(dayDiv);
+
+    }
    // Next month's dates
     const totalCells = daysContainer.children.length; // Quantos dias já colocamos (passado + atual)
      

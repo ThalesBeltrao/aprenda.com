@@ -46,3 +46,40 @@ document.getElementById("reset").addEventListener("click", () => {
     button.setAttribute("action", "start");
     button.innerHTML = '<i class="material-icons">play_arrow</i>';
 });
+
+// Event Listener para o botão de Salvar (Disquete)
+document.getElementById("save-timer").addEventListener("click", () => {
+    // 1. Pega o tempo atual usando a sua função formatTime
+    const tempoFormatado = formatTime(timer);
+    
+    // 2. Localiza o input de tempo no seu formulário
+    const inputTempo = document.getElementById("input-tempo");
+
+    if (inputTempo) {
+        // 3. Define o valor do input com o tempo do cronômetro
+        inputTempo.value = tempoFormatado;
+
+        // 4. Feedback visual: Pausa o cronômetro automaticamente ao salvar
+        const powerBtn = document.querySelector("#power");
+        if (powerBtn.getAttribute("action") === "pause") {
+            toggleTimer(); 
+        }
+        
+        // Opcional: Efeito de brilho no input para mostrar que foi preenchido
+        inputTempo.style.borderColor = "#8a2be2";
+        setTimeout(() => {
+            inputTempo.style.borderColor = "#333";
+        }, 1000);
+    }
+});
+
+// O timer do seu cronômetro está em centésimos (10ms)
+// 100 centésimos = 1 segundo
+// 6000 centésimos = 1 minuto
+
+const converterTimerParaMinutos = (valorTimer) => {
+    // Divide por 6000 para ter o total em minutos
+    // Ex: 9000 centésimos -> 1.5 minutos (1min e 30s)
+    let minutos = valorTimer / 6000;
+    return parseFloat(minutos.toFixed(2)); // Retorna como float com 2 casas
+};
