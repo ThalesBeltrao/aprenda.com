@@ -1,8 +1,13 @@
-import os
-from pymongo import MongoClient
+from motor.motor_asyncio import AsyncIOMotorClient
+from beanie import init_beanie
+from config.settings import settings
+from model.estudo_model import Estudo
 
-MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
-client = MongoClient(MONGO_URI)
+async def init_db():
 
-db = client["dashboard"]
-coll = db["estudos"]
+    client = AsyncIOMotorClient(settings.MONGO_URI)
+
+    await init_beanie(
+        database=client[settings.DB_NAME],
+        document_models=[Estudo]
+    )
