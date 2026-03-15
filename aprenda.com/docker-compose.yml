@@ -1,36 +1,45 @@
+version: '3.8'
+
 services:
-  # --- BANCO DE DADOS ---
   mongodb:
-    image: mongo:7
-    container_name: mongodb_dash
+    image: mongo:latest
+    container_name: mongodb_db
+    restart: always
     ports:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+    # Garante que o container esteja "saudável" apenas quando o banco responder
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
-  # --- BACKEND (FastAPI) ---
   api:
-    build: ./project/backend
+    build: 
+      context: ./project/backend
+      dockerfile: Dockerfile
     container_name: fastapi_app
-    ports:
-      - "8000:8000"
+    restart: always
     environment:
-      # No Docker, o host do mongo não é 'localhost', é o nome do serviço
-      - MONGO_URI=mongodb://mongodb:27017/
+      - MONGO_URI=mongodb://mongodb:27017/aprenda_db
+    # O app só sobe quando o healthcheck do mongodb passar
     depends_on:
-      - mongodb
+      mongodb:
+        condition: service_healthy
 
-  # --- FRONTEND + PROXY (Nginx) ---
   nginx:
     image: nginx:alpine
     container_name: nginx_proxy
-    ports:
-      - "80:80"
     volumes:
-      - ./project/frontend:/usr/share/nginx/html:ro
-      - ./project/frontend/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    - ./project/frontend/app:/usr/share/nginx/html
+    - ./project/frontend/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+    - "80:80"
     depends_on:
-      - api
+    - api
 
 volumes:
   mongo_data:
