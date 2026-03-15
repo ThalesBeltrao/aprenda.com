@@ -6,7 +6,7 @@ tarefas_router = APIRouter(prefix="/tarefas", tags=["Tarefas"])
 
 @tarefas_router.post("/salvar")
 async def salvar_tarefa(estudo: Estudo):
-
+    estudo.id = None
     await estudo.insert()
 
     return {
